@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Upload e Download de Arquivos</title>
 </head>
 <body>
-    <h1>Upload de Arquivos</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <div class="file-upload">
+    <div class="container">
+        <h1 class="header">Upload de Arquivos</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="fileInput" class="file-input-label">
+                <i class="fas fa-cloud-upload-alt"></i> Escolher arquivo
+            </label>
             <input type="file" name="file" id="fileInput" accept=".txt, .pdf, .jpg, .png" required>
-            <label for="fileInput" class="file-label">Escolher arquivo</label>
-        </div>
-        <button type="submit" class="upload-button">Enviar</button>
-    </form>
+            <button type="submit" class="upload-button">
+                <i class="fas fa-upload"></i> Enviar
+            </button>
+        </form>
 
-    <h1>Download de Arquivos</h1>
-    <ul id="fileList"></ul>
+        <h1 class="header">Download de Arquivos</h1>
+        <ul id="fileList" class="file-list"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
