@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="header">Upload de Arquivos</h1>
+        <h1>Upload de Arquivos</h1>
         <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
             <label for="fileInput" class="file-input-label">
                 <i class="fas fa-cloud-upload-alt"></i> Escolher arquivo
@@ -20,8 +20,25 @@
             </button>
         </form>
 
-        <h1 class="header">Download de Arquivos</h1>
+        <h1>Download de Arquivos</h1>
         <ul id="fileList" class="file-list"></ul>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-exclamation-circle modal-icon"></i>
+            <p id="modal-text">Tem certeza de que deseja excluir o arquivo?</p>
+            <button id="confirm-button" class="modal-button confirm">Sim, Excluir</button>
+            <button id="cancel-button" class="modal-button">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Sucesso -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <p>Arquivo enviado com sucesso</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
