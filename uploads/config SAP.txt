@@ -1,6 +1,0 @@
-Pisoluiis01.b1cloud.com.br
-
-8443
-
-SBO_SOLUBIO_PRD_NEW
-
