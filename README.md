@@ -18,7 +18,25 @@ cp .env.example .env
 mkdir uploads
 ```
 
-## Passo 2: Instalar Docker e Docker Compose
+## Pode optar por rodar com apenas o node ou o docker (Passo 2)
+
+Node v17.9.1
+
+1. Instalar pacotes
+
+```shell
+npm install
+```
+
+2. Inciar aplicação 
+
+```shell
+node server.js
+```
+
+3. Acesse a aplicação em seu navegador em http://localhost:3001.
+
+# Passo 2: Instalar Docker e Docker Compose
 
 Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina. Você pode baixá-los nas seguintes URLs:
 
