@@ -6,9 +6,11 @@ Este projeto é uma aplicação Node.js que utiliza o Docker Compose para facili
 
 Antes de começar, você precisa configurar as variáveis de ambiente em um arquivo `.env`. Você pode usar o arquivo `.env.example` como exemplo. Preencha as informações necessárias, como credenciais de autenticação.
 
-```shell
+
 # Copie o arquivo de exemplo
+```shell
 cp .env.example .env
+```
 # Edite o arquivo .env com suas informações de autenticação
 
 ## Passo 2: Instalar Docker e Docker Compose
@@ -32,7 +34,7 @@ Para configurar e executar o ambiente de desenvolvimento, siga estas etapas:
 
 ```shell
 docker-compose -f docker-compose.dev.yml up --build
-
+```
 1. Acesse a aplicação em seu navegador em http://localhost:3001.
 
 ### Ambiente de Desenvolvimento (prod)
@@ -45,7 +47,7 @@ Para configurar e executar o ambiente de desenvolvimento, siga estas etapas:
 
 ```shell
 docker-compose -f docker-compose.prod.yml up --build
-
+```
 1. Acesse a aplicação em seu navegador em http://localhost:3001.
 
 Lembre-se de que a porta pode variar dependendo das configurações definidas no arquivo `docker-compose.yml` para a aplicação. Certifique-se de acessar a porta correta.
