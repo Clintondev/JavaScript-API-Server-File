@@ -1,6 +1,6 @@
 # Projeto servidor de arquivos em Node.js com Docker Compose
 
-Este projeto é uma aplicação Node.js que utiliza o Docker Compose para facilitar a configuração do ambiente de desenvolvimento e produção. Ele inclui instruções detalhadas sobre como configurar e executar o projeto em diferentes ambientes.
+Este projeto é uma aplicação Node.js que utiliza o Docker Compose para facilitar a configuração do ambiente de desenvolvimento e produção. Em resumo, este projeto é uma aplicação web que permite que os usuários façam upload, download e exclusão de arquivos, com funcionalidades adicionais como autenticação básica e exibição de mensagens de sucesso. É uma aplicação completa que combina front-end (HTML, CSS, JavaScript) e back-end (Node.js e Express.js) para criar uma interface de gerenciamento de arquivos simples. Ele inclui instruções detalhadas sobre como configurar e executar o projeto em diferentes ambientes.
 
 ## Passo 1: Configurar o Arquivo .env
 
