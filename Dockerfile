@@ -1,5 +1,5 @@
 # Use uma imagem base do Node.js
-FROM node:14
+FROM node:17
 
 # Crie um diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
@@ -7,8 +7,10 @@ WORKDIR /usr/src/app
 # Copie os arquivos necessários para o contêiner
 COPY package*.json ./
 COPY server.js ./
+COPY .env ./
 COPY public ./public
 COPY uploads ./uploads
+
 
 # Instale as dependências do Node.js
 RUN npm install
