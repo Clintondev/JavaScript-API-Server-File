@@ -3,14 +3,14 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const basicAuth = require('express-basic-auth'); // Middleware para autenticação básica
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware de autenticação básica
-const users = {
-  admin: 'senhaadmin', // Adicione os pares nome de usuário e senha aqui
-};
+const users = {};
+users[process.env.BASIC_AUTH_USERNAME] = process.env.BASIC_AUTH_PASSWORD;
 
 app.use(basicAuth({
   users,

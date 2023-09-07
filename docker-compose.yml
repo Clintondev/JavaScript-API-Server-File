@@ -1,0 +1,16 @@
+version: '3'
+services:
+  node-app:
+    build:
+      context: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./uploads:/usr/src/app/uploads # Montar a pasta de uploads
+    environment:
+      - PORT=3001
+    networks:
+      - my_network
+
+networks:
+  my_network:
