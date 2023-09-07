@@ -8,8 +8,8 @@
     <title>Ctrl Enter Server</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Upload de Arquivos</h1>
+    <div class="container" >
+        <h1 id="title-container">Upload de Arquivos</h1>
         <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
             <label for="fileInput" class="file-input-label">
                 <i class="fas fa-cloud-upload-alt"></i> Escolher arquivo
@@ -41,16 +41,14 @@
         </div>
     </div>
 
-    <!-- Modal de Login -->
     <div id="login-modal" class="modal">
         <div class="modal-content">
-            <h2>Login</h2>
+            <i class="fas fa-user modal-icon"></i>
+            <h2>Fazer Login</h2>
             <form id="login-form">
-                <label for="username">Nome de Usuário</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit" class="modal-button">Login</button>
+                <input type="text" id="username" placeholder="Nome de usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit" class="modal-button">Entrar</button>
             </form>
         </div>
     </div>

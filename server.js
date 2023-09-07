@@ -2,29 +2,54 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const basicAuth = require('express-basic-auth'); // Middleware para autenticação básica
+const jwt = require('jsonwebtoken');
+
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware de autenticação básica
-const users = {};
-users[process.env.BASIC_AUTH_USERNAME] = process.env.BASIC_AUTH_PASSWORD;
+app.use(express.json());
 
-app.use(basicAuth({
-  users,
-  challenge: true, // Desafiar os clientes a fornecer credenciais
-}));
+const users = {};
+users[process.env.ADMIN_NAME] = process.env.ADMIN_PASSWORD;
+
+app.post('/authenticate', (req, res) => {
+  const { username, password } = req.body;
+  const userCredentials = {
+    username: process.env.USER_NAME,
+    password: process.env.USER_PASSWORD,
+  };
+  const adminCredentials = {
+    username: process.env.ADMIN_NAME,
+    password: process.env.ADMIN_PASSWORD,
+  };
+
+  let userType = null; // Inicialmente, o tipo de usuário é nulo
+
+  if (username === userCredentials.username && password === userCredentials.password) {
+    userType = 'user';
+  } else if (username === adminCredentials.username && password === adminCredentials.password) {
+    userType = 'admin';
+  }
+
+  if (userType) {
+    // Gere um token JWT com um prazo de validade (por exemplo, 1 hora)
+    const token = jwt.sign({ userType }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+    res.status(200).json({ message: 'Autenticação bem-sucedida', userType, token });
+  } else {
+    res.status(401).json({ error: 'Nome de usuário ou senha incorretos' });
+  }
+});
+
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
   console.error(err);
-  if (err.code === 'LIMIT_FILE_SIZE') {
-    return res.status(400).json({ error: 'O arquivo é muito grande' });
-  }
   res.status(500).json({ error: 'Erro interno do servidor' });
 });
+
 
 // Configuração para o multer (para o upload de arquivos)
 const storage = multer.diskStorage({
