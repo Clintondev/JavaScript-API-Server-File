@@ -17,9 +17,9 @@ COPY .env ./
 COPY public ./public
 COPY uploads ./uploads
 
-RUN npm install
-
 RUN eval $(ssh-agent -s) && ssh-add /usr/src/app/.ssh/id_rsa
+
+RUN npm install
 
 EXPOSE 3001
 
