@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
     const confirmButton = document.getElementById('confirm-button');
     const cancelButton = document.getElementById('cancel-button');
-    const fileInput = document.getElementById('fileInput'); // Adicionado para referenciar o campo de seleção de arquivo
+    const fileInput = document.getElementById('fileInput'); 
+    const loginButton = document.getElementById('login-button');
+    const loginModal = document.getElementById('login-modal');
+    
     let deletingFile = ''; // Para armazenar o nome do arquivo a ser excluído
   
     // Função para listar os arquivos disponíveis para download
