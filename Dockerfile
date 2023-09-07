@@ -5,12 +5,12 @@ FROM node:17
 WORKDIR /usr/src/app
 
 # Copie os arquivos necessários para o contêiner
+COPY .git ./.git
 COPY package*.json ./
 COPY server.js ./
 COPY .env ./
 COPY public ./public
 COPY uploads ./uploads
-
 
 # Instale as dependências do Node.js
 RUN npm install
