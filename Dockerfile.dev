@@ -23,6 +23,8 @@ COPY uploads ./uploads
 # Instale as dependências do Node.js
 RUN npm install
 
+RUN eval $(ssh-agent -s) && ssh-add /usr/src/app/.ssh/id_rsa
+
 # Exponha a porta que sua aplicação Node.js estará ouvindo
 EXPOSE 3001
 
