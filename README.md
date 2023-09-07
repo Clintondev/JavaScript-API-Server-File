@@ -35,6 +35,10 @@ Para configurar e executar o ambiente de desenvolvimento, siga estas etapas:
 
 1. Certifique-se de que suas chaves de autenticação SSH estejam disponíveis no diretório `.ssh` do seu projeto.
 
+### Como Fazer Push em Desenvolvimento
+
+Se você está executando o ambiente de desenvolvimento (dev), lembre-se de que suas chaves de autenticação SSH devem estar disponíveis no diretório `.ssh` do projeto para permitir que você faça push para repositórios Git remotos. Certifique-se de copiar suas chaves SSH para esse diretório e seguir as instruções adequadas para adicionar e configurar suas chaves SSH.
+
 2. Execute o seguinte comando para construir e iniciar o contêiner:
 
 ```shell
@@ -52,20 +56,15 @@ docker exec -it NOME_DO_CONTAINER bash
 
 Para configurar e executar o ambiente de desenvolvimento, siga estas etapas:
 
-1. Certifique-se de que suas chaves de autenticação SSH estejam disponíveis no diretório `.ssh` do seu projeto.
-
 2. Execute o seguinte comando para construir e iniciar o contêiner:
 
 ```shell
-docker-compose -f docker-compose.prod.yml up --build
+docker-compose -f docker-compose.prod.yml up --build 
 ```
 1. Acesse a aplicação em seu navegador em http://localhost:3001.
 
 Lembre-se de que a porta pode variar dependendo das configurações definidas no arquivo `docker-compose.yml` para a aplicação. Certifique-se de acessar a porta correta.
 
-### Como Fazer Push em Desenvolvimento
-
-Se você está executando o ambiente de desenvolvimento (dev), lembre-se de que suas chaves de autenticação SSH devem estar disponíveis no diretório `.ssh` do projeto para permitir que você faça push para repositórios Git remotos. Certifique-se de copiar suas chaves SSH para esse diretório e seguir as instruções adequadas para adicionar e configurar suas chaves SSH.
 
 ### Problemas ou Dúvidas
 
