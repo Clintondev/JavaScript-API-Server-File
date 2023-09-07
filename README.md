@@ -13,6 +13,11 @@ cp .env.example .env
 ```
 # Edite o arquivo .env com suas informações de autenticação
 
+# Criar pasta `uploads` para armazenar os arquivos
+```shell
+mkdir uploads
+```
+
 ## Passo 2: Instalar Docker e Docker Compose
 
 Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina. Você pode baixá-los nas seguintes URLs:
@@ -33,8 +38,14 @@ Para configurar e executar o ambiente de desenvolvimento, siga estas etapas:
 2. Execute o seguinte comando para construir e iniciar o contêiner:
 
 ```shell
-docker-compose -f docker-compose.dev.yml up --build
+docker-compose -f docker-compose.dev.yml up --build -d
 ```
+3. Execute o seguinte comando para entrar no bash do container:
+
+```shell
+docker exec -it NOME_DO_CONTAINER bash
+```
+
 1. Acesse a aplicação em seu navegador em http://localhost:3001.
 
 ### Ambiente de Desenvolvimento (prod)
