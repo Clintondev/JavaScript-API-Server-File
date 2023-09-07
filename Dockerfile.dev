@@ -10,6 +10,7 @@ COPY docker-compose.prod.yml ./
 COPY docker-compose.dev.yml ./
 COPY Dockerfile.prod ./
 COPY Dockerfile.dev ./
+COPY README.md ./
 COPY .env.example ./
 COPY package*.json ./
 COPY server.js ./
