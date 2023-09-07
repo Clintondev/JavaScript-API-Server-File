@@ -7,7 +7,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./uploads:/usr/src/app/uploads # Montar a pasta de uploads
+      - ./uploads:/usr/src/app/uploads 
     environment:
       - PORT=3001
     networks:

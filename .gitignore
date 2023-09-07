@@ -4,3 +4,6 @@ uploads/*
 
 .env
 
+id_rsa.pub
+
+id_rsa

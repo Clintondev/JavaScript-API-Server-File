@@ -1,10 +1,6 @@
 # Use uma imagem base do Node.js
 FROM node:17
 
-
-# Defina uma variável de ambiente para o ambiente de produção
-ENV NODE_ENV=production
-
 # Crie um diretório de trabalho dentro do contêiner
 WORKDIR /usr/src/app
 
