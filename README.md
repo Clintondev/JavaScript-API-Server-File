@@ -81,11 +81,3 @@ docker-compose -f docker-compose.prod.yml up --build
 ```
 1. Acesse a aplicação em seu navegador em http://localhost:3001.
 
-Lembre-se de que a porta pode variar dependendo das configurações definidas no arquivo `docker-compose.yml` para a aplicação. Certifique-se de acessar a porta correta.
-
-
-### Problemas ou Dúvidas
-
-Se você encontrar problemas ou tiver dúvidas sobre este projeto ou sua configuração, sinta-se à vontade para entrar em contato com a equipe de suporte ou verificar a documentação adicional fornecida.
-
-Aproveite o desenvolvimento da sua aplicação Node.js com Docker Compose!
